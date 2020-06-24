@@ -422,7 +422,7 @@ class MultiStepForm implements Responsable, Arrayable
      */
     public function lastStep(): int
     {
-        return $this->steps->keys()->max(functionn($value) {return $value;}) ?? 1;
+        return $this->steps->keys()->max(function($value) {return $value;}) ?? 1;
     }
 
     /**
