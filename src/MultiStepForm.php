@@ -21,15 +21,15 @@ use Illuminate\Contracts\View\View as ViewContract;
 
 class MultiStepForm implements Responsable, Arrayable
 {
-    protected string $namespace = 'multistep-form';
-    protected bool $wasReset = false;
-    protected bool $canGoBack = false;
-    public Collection $after;
-    public Collection $before;
-    public Collection $steps;
-    public Request $request;
-    public Session $session;
-    public array $data;
+    protected $namespace = 'multistep-form';
+    protected $wasReset = false;
+    protected $canGoBack = false;
+    public $after;
+    public $before;
+    public $steps;
+    public $request;
+    public $session;
+    public $data;
     public $view;
 
     /**
@@ -422,7 +422,7 @@ class MultiStepForm implements Responsable, Arrayable
      */
     public function lastStep(): int
     {
-        return $this->steps->keys()->max(fn($value) => $value) ?? 1;
+        return $this->steps->keys()->max(functionn($value) {return $value;}) ?? 1;
     }
 
     /**
